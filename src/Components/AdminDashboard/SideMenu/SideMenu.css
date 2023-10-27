@@ -1,0 +1,185 @@
+.admin-side-menu-web {
+	height: 100%;
+	min-height: 100vh;
+	background-color: #ffa101;
+	border-radius: 0px 120px 0 0px;
+	color: #000;
+	min-width: 300px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.admin-side-menu-web h1 {
+	color: #000;
+	text-align: center;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-top: 78px;
+	margin-bottom: 78px;
+}
+
+.admin-side-menu-logo {
+	width: 200px;
+}
+
+.admin-side-link {
+	margin-right: 50px;
+	margin-bottom: 40px;
+	width: max-content;
+	display: flex;
+}
+
+.admin-side-link :hover {
+	color: white;
+}
+
+.admin-side-link a {
+	color: #000;
+	font-family: Outfit;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-decoration: none;
+}
+
+.admin-side-link :nth-child(1) {
+	font-size: 30px;
+	color: white;
+	margin-right: 10px;
+}
+
+.admin-side-img img {
+	border: black 2px solid;
+	width: 160px;
+	height: 160px;
+	border-radius: 100%;
+}
+
+.admin-side-img {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #000;
+}
+
+.admin-side-img button {
+	margin-top: 10px;
+	margin-top: 10px;
+	background-color: transparent;
+	color: #000;
+}
+
+.admin-side-img-change {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.admin-side-img-change input {
+	background: transparent;
+	margin-top: 20px;
+}
+
+.admin-menu-mobile {
+	display: none;
+}
+
+.sideMenuClosed {
+	width: 60px;
+	height: 100%;
+	background-color: #ffa101;
+	border-radius: 0px 120px 0 0px;
+}
+
+.openSideBtn {
+	position: absolute;
+	top: 30px;
+	left: 200px;
+	background: none;
+	border: none;
+	color: black;
+}
+
+.openSideBtn .menuBtn {
+	rotate: 180deg;
+}
+
+.closedSideBtn {
+	position: absolute;
+	top: 30px;
+	left: 20px;
+	background: none;
+	border: none;
+}
+.menuBtn {
+	width: 30px;
+	height: 30px;
+	color: black;
+	background: none;
+	border: none;
+}
+
+@media screen and (max-width: 850px) {
+	.sideMenuClosed {
+		display: none;
+	}
+
+	.admin-side-menu-web {
+		display: none;
+	}
+
+	.admin-menu-mobile {
+		display: block;
+		position: fixed;
+		top: 0;
+		height: 60px;
+		background-color: orange;
+		width: 100%;
+		z-index: 1000;
+	}
+
+	.nav-hidden {
+		display: none;
+	}
+	.nav-open {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: #ffa101;
+		margin-top: 10px;
+		padding-top: 70px;
+	}
+
+	.nav-menu-logo-mobile {
+		position: fixed;
+		top: 5px;
+		left: -50px;
+		background-image: url('../../../assets/logos/Logo1.png');
+		width: 40px;
+		height: 50px;
+		border-radius: 80px;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	.nav-icon {
+		width: 20px;
+	}
+
+	.admin-menu-mobile-top {
+		margin-top: 15px;
+		margin-left: 5px;
+	}
+
+	.menu-admin-container {
+		max-width: 200vw;
+	}
+}

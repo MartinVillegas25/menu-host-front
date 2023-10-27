@@ -1,0 +1,166 @@
+.client-side-menu-web {
+	height: 100%;
+	min-height: 100vh;
+	background-color: #ffa101;
+	border-radius: 0px 120px 0 0px;
+	color: #000;
+	min-width: 300px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: all 2s ease;
+}
+
+.client-side-menu-web h1 {
+	color: #000;
+	text-align: center;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-top: 78px;
+	margin-bottom: 78px;
+}
+
+.client-side-menu-logo {
+	width: 200px;
+}
+
+.client-side-link {
+	margin-right: 50px;
+	margin-bottom: 40px;
+	width: max-content;
+	display: flex;
+	text-transform: uppercase;
+}
+
+.client-side-link :hover {
+	color: white;
+}
+
+.client-side-link a {
+	color: #000;
+
+	font-size: 20px;
+	font-style: normal;
+
+	line-height: normal;
+	text-decoration: none;
+}
+
+.client-side-link :nth-child(1) {
+	font-size: 30px;
+	color: white;
+	margin-right: 10px;
+}
+
+.client-side-img img {
+	border: black 2px solid;
+	width: 160px;
+	height: 160px;
+	border-radius: 100%;
+}
+
+.client-side-img {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.client-menu-mobile {
+	display: none;
+}
+
+.sideMenuClosed {
+	width: 60px;
+	height: 100%;
+	min-height: 100vh;
+	background-color: #ffa101;
+	border-radius: 0px 120px 0 0px;
+}
+
+.openSideBtn {
+	position: absolute;
+	top: 30px;
+	left: 200px;
+	background: none;
+	border: none;
+	color: black;
+	cursor: pointer;
+	transition: all 1s ease-in-out;
+}
+
+.openSideBtn .menuBtn {
+	rotate: 180deg;
+}
+
+.closedSideBtn {
+	position: absolute;
+	top: 30px;
+	left: 20px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	transition: all 0.5s ease-in-out;
+}
+.menuBtn {
+	width: 30px;
+	height: 30px;
+	color: black;
+	background: none;
+	border: none;
+}
+
+.cambiarimg-btn {
+	background-color: #fff;
+	color: #ffa101;
+	height: 30px;
+	margin-top: 10px;
+	border: 1px solid #fff;
+}
+
+@media screen and (max-width: 850px) {
+	.client-side-menu-web {
+		display: none;
+	}
+
+	.client-menu-mobile {
+		display: block;
+		position: fixed;
+		height: 60px;
+		background-color: #ffa101;
+		width: 100%;
+	}
+
+	.nav-hidden {
+		display: none;
+	}
+	.nav-block {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: #ffa101;
+		margin-top: 60px;
+		padding-top: 30px;
+	}
+
+	.nav-menu-logo-mobile {
+		width: 250px;
+		margin-left: 80px;
+	}
+
+	.nav-icon {
+		width: 20px;
+	}
+
+	.client-menu-mobile-top {
+		position: fixed;
+		top: -100px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		left: 10px;
+	}
+}

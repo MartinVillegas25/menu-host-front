@@ -1,0 +1,133 @@
+.products-container {
+	padding-top: 20px;
+	padding-bottom: 200px;
+}
+
+.menu-mobile-admin-categories {
+	width: 100%;
+	min-width: 100vw;
+	display: flex;
+	overflow-x: scroll;
+}
+
+.menu-mobile-admin-btn {
+	border-radius: 5px;
+
+	background: #dedcdc;
+	width: fit-content;
+	color: #000;
+	font-family: Outfit;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+/* Estilo para la página principal */
+.products-container {
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+	margin: 0;
+}
+
+/* Estilo para cada categoría */
+
+.category-title {
+	color: #000;
+
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-left: 20px;
+}
+
+/* Estilo para cada subcategoría */
+.subcategory-title {
+	color: #000;
+
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-align: start;
+	margin-left: 50px;
+}
+
+/* Estilo para la lista de productos */
+.products-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* Estilo para cada producto */
+/* li {
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	padding: 10px;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+} */
+
+.product-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.product-name {
+	color: #000;
+
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	width: 116px;
+	height: 19px;
+
+	text-align: center;
+}
+
+.product-price {
+	color: #000;
+	text-align: center;
+
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+/* Estilo para la imagen del producto */
+
+.product-img {
+	width: 81px;
+	height: 78px;
+	flex-shrink: 0;
+}
+
+.product-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Estilo para el nombre del producto */
+
+.product-add {
+	display: flex;
+	width: 24px;
+	height: 24px;
+	flex-shrink: 0;
+	margin-top: 30px;
+}
+
+.selected-category {
+	border-radius: 5px;
+	background: #ffa101;
+	color: #fff; /* Cambia esto al color deseado */
+}

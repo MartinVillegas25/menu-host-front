@@ -1,0 +1,259 @@
+.client-config {
+	margin-top: 159px;
+}
+
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(
+		0,
+		0,
+		0,
+		0.5
+	); /* Cambia el color y la opacidad según tus preferencias */
+	backdrop-filter: blur(
+		10px
+	); /* Ajusta el valor de desenfoque según tus preferencias */
+	/* Asegúrate de que esté por encima del contenido */
+}
+.h4-plan {
+	background-color: #fff;
+	color: #ffa101;
+	line-height: 120px;
+	text-transform: uppercase;
+}
+button {
+	cursor: pointer;
+}
+.client-config-container {
+	height: 300px;
+	display: flex;
+	justify-content: space-around;
+}
+.client-config-qr-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.client-config-personal {
+	display: flex;
+	flex-direction: column;
+	align-items: normal;
+	justify-content: space-around;
+}
+
+.client-config-personal h3 {
+	color: #fff;
+	text-transform: uppercase;
+
+	font-style: normal;
+
+	line-height: normal;
+}
+
+.client-config-personal h4 {
+	color: #fff;
+	font-family: Outfit;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 200;
+	line-height: normal;
+	margin: 0;
+}
+
+.client-config-plan {
+	max-height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: normal;
+	text-align: center;
+}
+.qr {
+	width: 221px;
+	height: 205px;
+	flex-shrink: 0;
+	background-color: aliceblue;
+}
+
+.client-config-btn {
+	width: 100%;
+	padding: 15px 20px;
+	flex-shrink: 0;
+	border-radius: 18px;
+	background: #ffa101;
+	color: #fff;
+	text-transform: uppercase;
+	border: none;
+}
+.client-config-btn:hover {
+	background-color: #fff;
+	color: #ffa101;
+}
+
+.client-config-qr-label {
+	color: #fff;
+	font-family: Outfit;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 200;
+	line-height: normal;
+	max-width: 172px;
+	margin-top: 10px;
+}
+
+.client-config-qr-input {
+	background-color: transparent;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.client-data-popup {
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 10%;
+	border: solid 4px orange;
+	color: #000;
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-color: rgba(
+		0,
+		0,
+		0,
+		0.5
+	); /* Cambia el color y la opacidad según tus preferencias */
+	backdrop-filter: blur(10px);
+}
+
+.popup-hidden {
+	display: none;
+}
+
+.client-data-popup-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 0px;
+}
+
+.client-data-popup-container input {
+	width: 300px;
+	height: 30px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.client-data-popup-container {
+	color: white;
+}
+
+.client-data-popup-btn {
+	position: absolute;
+	left: 10px;
+	top: 15px;
+}
+
+.submit-btn {
+	padding: 4px 6px;
+	border: orange solid;
+	border-radius: 5px;
+	outline: none;
+	background-color: orange;
+	color: white;
+}
+
+.client-plan-select {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.client-plan-select select {
+	width: 200px;
+	height: 30px;
+	text-align: center;
+	font-size: large;
+}
+.subs-btn-container-plan div {
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: auto;
+}
+
+.client-plan-popup {
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 10%;
+	border: solid 4px orange;
+	color: #000;
+	width: 400px;
+	height: auto;
+	max-height: 200px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-color: rgba(
+		0,
+		0,
+		0,
+		0.5
+	); /* Cambia el color y la opacidad según tus preferencias */
+	backdrop-filter: blur(10px);
+}
+.plan-btn {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+.submit-plan-btn {
+	padding: 4px 6px;
+	border: orange solid;
+	border-radius: 5px;
+	outline: none;
+	background-color: orange;
+	color: white;
+	display: flex;
+	justify-content: center;
+}
+.precios-planes {
+	display: flex;
+	width: 100%;
+	max-width: 600px;
+	justify-content: space-around;
+	position: absolute;
+	bottom: 20px;
+}
+.precios-planes p {
+	font-size: 12px;
+}
+
+.subs-btn-newPlan {
+	background-color: #ffa101;
+	padding: 12px 0;
+	border: none;
+	color: #fff;
+	width: 100%;
+	min-width: 150px;
+	text-align: center;
+	margin-top: 10px;
+	border-radius: 10px;
+}
+.subs-btn-newPlan:hover {
+	background-color: #fff;
+	color: #ffa101;
+}
