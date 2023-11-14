@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-const url = 'https://menu-host-back-production.up.railway.app'
+const url = 'https://simesero.com'
 import axios from 'axios';
 
 export const CREATE_USER = 'CREATE_USER';
