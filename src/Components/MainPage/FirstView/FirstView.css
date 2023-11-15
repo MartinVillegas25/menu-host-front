@@ -26,6 +26,10 @@
 	font-size: 70px;
 	margin: 0px;
 }
+.fv-title h1 {
+	font-size: 70px;
+	margin: 0px;
+}
 
 .fv-title :nth-child(2) {
 	color: orange;
