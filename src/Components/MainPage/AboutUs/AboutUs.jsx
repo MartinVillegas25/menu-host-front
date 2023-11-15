@@ -10,8 +10,8 @@ export default function AboutUs() {
 				<div className="about-text1">
 					<div className="about-title1">
 						<h2>
-							Un equipo apasionado para impulsar tu{' '}
-							<span>éxito gastronómico</span>
+						Un equipo formado por comensales para el {' '}
+							<span>éxito de tus servicios</span>
 						</h2>
 					</div>
 					<div className="about-imgs">
@@ -42,15 +42,12 @@ export default function AboutUs() {
 						</h2>
 					</div>
 					<p>
-						La creación de un menu digital didáctico, diseñado para simplificar
-						la interacción entre usuarios y camareros. Gracias a nuestra
-						tecnologia avanzada, los clientes podran explorar tu oferta
-						culinaria con facilidad, descubriendo platos y sabores de manera
-						intuitiva y envolvente. Para los comercios, esto significa una
-						gestión eficiente de los pedidos y una atención mas ágil y precisa
+					La creación de un menú digital, didáctico y autoadministrable, diseñado para simplificar la interacción entre comensales y meseros/as. Gracias a nuestra tecnología web y QR, tus clientes podrán explorar tu oferta de comidas y bebidas con facilidad, de manera intuitiva y envolvente, desde que entran a tu salón y se retiran del mismo, te acompañamos. Para los restaurantes, bares, cafés, buffet, comida rápida, etc., esto significa una gestión eficiente de los pedidos y una atención más ágil y precisa
+
 					</p>
 				</div>
 			</div>
 		</div>
 	);
 }
+

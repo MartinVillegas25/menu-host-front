@@ -103,7 +103,6 @@ export default function ClientConfig() {
 					icon: 'success'
 				});
 			} else {
-				console.log(newPlan);
 				swal({ text: 'no se han modificado su plan', icon: 'info' });
 			}
 		});
@@ -178,7 +177,7 @@ export default function ClientConfig() {
 				</div>
 				<div className="client-config-qr-container">
 					<a
-						href={`http://127.0.0.1:5173/dashboard/qrgenerator?email=${userEmail}`}
+						href={`https://simesero.com/dashboard/qrgenerator?email=${userEmail}`}
 					>
 						<button className="client-config-btn">Generar codigos Qr</button>
 					</a>

@@ -7,14 +7,14 @@ export default function AppDetails() {
 	return (
 		<div className="appdet">
 			<div className="appdet-circles">
-				<div>
-					<h3>Gestión integral de menú y precios</h3>
+			<div>
+					<h3>Autoadministra tu menú y precios sin esperas</h3>
 				</div>
 				<div>
-					<h3>División de cuentas automatizada</h3>
+					<h3>Sin instalar apps, gestiona pedidos y más</h3>
 				</div>
 				<div>
-					<h3>Gestión eficiente de pedidos</h3>
+					<h3>Subdivide las cuentas a pagar por mesa, sin caos</h3>
 				</div>
 			</div>
 			<div className="appdet-images">

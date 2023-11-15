@@ -148,7 +148,7 @@ export default function QrGenerator() {
 			i < parseInt(firstCode, 10) + parseInt(totalCodes, 10);
 			i++
 		) {
-			codes.push(`http://127.0.0.1:5173/menulocal?email=${email}&mesa=${i}`);
+			codes.push(`https://simesero.com/menulocal?email=${email}&mesa=${i}`);
 		}
 		return codes;
 	};
