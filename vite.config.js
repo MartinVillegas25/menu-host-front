@@ -7,7 +7,7 @@ export default defineConfig({
 	server: {
 		proxy: {
 			'/socket.io': {
-				target: 'http://simesero.com',
+				target: 'https://simesero.com',
 				changeOrigin: true,
 				ws: true
 			}
