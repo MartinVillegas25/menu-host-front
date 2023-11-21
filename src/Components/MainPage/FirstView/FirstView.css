@@ -105,13 +105,50 @@ div.circle a {
 	background-repeat: no-repeat;
 	rotate: -20deg;
 }
+.about-imgs {
+	display: none;
+}
+.fv-plan-btn-mobile{
+	display: none;
+}
+.title-mobile{
+	display: none;
+}
 
 @media screen and (max-width: 850px) {
+	.title-desk{
+		display: none;
+	}
+	.title-mobile{
+		display: block;
+	}
+	.fv-plan-btn-mobile{
+		display: block;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 120px;
+		height: 40px;
+		border: solid orange;
+		background-color: orange;
+		color: #fff;
+		padding: 5px 15px;
+		font-weight: bold;
+
+		border-radius: 10px;
+	}
+	
+	.fv-title h1 {
+		font-size: 42px;
+	}
+	
 	.fv {
 		height: auto;
 		width: auto;
 	}
 	.fv-container {
+		min-height: 90vh;
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -127,7 +164,7 @@ div.circle a {
 
 	.fv-title h2 {
 		margin: 0px;
-		font-size: 38px;
+		font-size: 32px;
 	}
 
 	.fv-text {
@@ -182,17 +219,46 @@ div.circle a {
 	}
 
 	.fv-plan-btn {
+		display: none;
+		
+	}
+	.about-imgs {
 		display: flex;
 		justify-content: center;
-		align-items: center;
-		width: 120px;
-		height: 40px;
-		border: solid orange;
-		background-color: orange;
-		color: #fff;
-		padding: 5px 15px;
-		font-weight: bold;
+		margin: auto;
 
-		border-radius: 10px;
+		z-index: -1;
+	}
+
+	.about-imgs :nth-child(1) {
+		width: 80px;
+		height: 200px;
+		border-radius: 80px;
+		background-image: url('../../../assets/img1.jpeg');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		rotate: -20deg;
+		margin-top: 100px;
+	}
+	.about-imgs :nth-child(2) {
+		width: 80px;
+		height: 300px;
+		border-radius: 80px;
+		background-image: url('../../../assets/img2.jpeg');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		rotate: -20deg;
+	}
+	.about-imgs :nth-child(3) {
+		width: 80px;
+		height: 200px;
+		border-radius: 80px;
+		background-image: url('../../../assets/img3.jpeg');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		rotate: -20deg;
 	}
 }

@@ -55,7 +55,7 @@
 .remember {
 	margin-top: 10px;
 	display: flex;
-	justify-content: space-around;
+	justify-content:start;
 	align-items: center;
 	font-size: 10px;
 	font-weight: 300;

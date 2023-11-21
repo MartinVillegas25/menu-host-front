@@ -45,6 +45,7 @@
 	font-weight: 700;
 	line-height: normal;
 	text-decoration: none;
+	text-transform: initial;
 }
 
 .admin-side-link :nth-child(1) {

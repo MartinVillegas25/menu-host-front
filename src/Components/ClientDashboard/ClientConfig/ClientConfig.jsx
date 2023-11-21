@@ -177,7 +177,7 @@ export default function ClientConfig() {
 				</div>
 				<div className="client-config-qr-container">
 					<a
-						href={`https://simesero.com/dashboard/qrgenerator?email=${userEmail}`}
+						href={`https://menu-host-front-dxa6.vercel.app/dashboard/qrgenerator?email=${userEmail}`}
 					>
 						<button className="client-config-btn">Generar codigos Qr</button>
 					</a>

@@ -7,14 +7,23 @@ export default function FirstView() {
 	return (
 		<main className="fv">
 			<div className="fv-container">
+				<div className="about-imgs">
+						<div></div>
+						<div></div>
+						<div></div>
+				</div>
 				<div className="fv-text">
 				<div className="fv-title">
 					
 					<h1>El mesero virtual</h1>
 					<h2>que suma agilidad</h2>
-					<h2>y ganancias</h2>
-					<h2>a tu salón</h2>
+					<h2 className='title-mobile'>y ganancia a tu salon</h2>
+					<h2 className='title-desk'>y ganancias</h2>
+					<h2 className='title-desk'>a tu salón</h2>
 				</div>
+				<button className="fv-plan-btn-mobile">
+					<a href="#suscripcion">Ver planes</a>
+				</button>
 				<div>
 					<p>
 						Gestioná pedidos de manera inteligente y optimizá tiempos de

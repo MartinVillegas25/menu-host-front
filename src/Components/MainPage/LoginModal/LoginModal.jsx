@@ -4,12 +4,13 @@ import img from '../../../assets/CAMARERA.jpg';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { logUser, validateAdmin, validateUser } from '../../../redux/actions';
+import { Link } from 'react-router-dom';
 
 export default function LoginModal({ handleCloseLogin }) {
 	const dispatch = useDispatch();
 	const token = useSelector((state) => state.token);
 	const userType = useSelector((state) => state.userType);
-	console.log(userType);
+	const actualUser = useSelector((state) => state.actualUser);
 
 	const [input, setInput] = useState({
 		email: '',
@@ -138,10 +139,16 @@ export default function LoginModal({ handleCloseLogin }) {
 							/>{' '}
 							<p>Recordarme</p>
 						</div>
-						<a href="">Olvidaste la contraseña?</a>
+						
 					</div>
-					{userType === 'admin' || userType === 'local' ? (
-						<p>Sesion iniciada correctamente</p>
+					{userType === 'local' ? (
+						<Link to={`/dashboard?email=${actualUser.email}`}>
+							<button className="navbar-btn">Ir al dashboard</button>
+						</Link>
+					) : userType === 'admin' ? (
+						<Link to="/admin">
+							<button className="navbar-btn">Administrador</button>
+						</Link>
 					) : (
 						<button className="login-btn" onClick={handleSubmit}>
 							Iniciar sesión

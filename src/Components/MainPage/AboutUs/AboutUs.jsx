@@ -14,11 +14,7 @@ export default function AboutUs() {
 							<span>éxito de tus servicios</span>
 						</h2>
 					</div>
-					<div className="about-imgs">
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
+					
 					<p>
 						En SiMesero, nos enorgullecemos de ofrecerte la solución definitiva
 						para llevar tu negocio de comida al siguiente nivel. Nuestra

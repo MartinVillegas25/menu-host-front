@@ -39,14 +39,17 @@ h3 {
 	margin-top: 20px;
 }
 
-.test-circles :nth-child(1) {
-	border: 2px solid orange;
-	background-color: orange;
-	border-radius: 100%;
-	width: 20px;
-	height: 20px;
-	margin-left: 20px;
-	margin-top: 20px;
+div.test-circle.active{
+    border: 2px solid orange;
+    background-color: orange;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+div.test-circle{
+    cursor:pointer;
 }
 
 .text-img {
@@ -122,15 +125,7 @@ h3 {
 		margin-top: 20px;
 	}
 
-	.test-circles :nth-child(1) {
-		border: 2px solid orange;
-		background-color: orange;
-		border-radius: 100%;
-		width: 20px;
-		height: 20px;
-		margin-left: 20px;
-		margin-top: 20px;
-	}
+	
 
 	.text-img {
 		width: 150px;
