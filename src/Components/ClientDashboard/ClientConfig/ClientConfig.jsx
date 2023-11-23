@@ -187,7 +187,7 @@ export default function ClientConfig() {
 				</div>
 				<div className="client-config-qr-container">
 					<a
-						href={`http://127.0.0.1:5173/dashboard/qrgenerator?email=${userEmail}`}
+						href={`https://menu-host-front-dxa6.vercel.app/dashboard/qrgenerator?email=${userEmail}`}
 					>
 						<button className="client-config-btn">Generar codigos Qr</button>
 					</a>
