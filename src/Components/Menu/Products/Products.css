@@ -131,3 +131,14 @@
 	background: #ffa101;
 	color: #fff; /* Cambia esto al color deseado */
 }
+.confirmation-symbol {
+	position: fixed;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: green;
+	font-size: 3em;
+	padding: 10px;
+	border-radius: 5px;
+	z-index: 9999;
+}
