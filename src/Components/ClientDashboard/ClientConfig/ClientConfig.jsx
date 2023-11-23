@@ -98,6 +98,16 @@ export default function ClientConfig() {
 		}).then((respuesta) => {
 			if (respuesta) {
 				dispatch(changePlan({ plan: newPlan }));
+				if (newPlan === 'standard') {
+					window.location.assign(
+						'https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848ae746f0018af1220de80617'
+					);
+				} else if (newPlan === 'premium') {
+					window.location.assign(
+						'https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848af994d0018b02039da906a5'
+					);
+				}
+
 				swal({
 					text: `Se han modificadao su plan, continue al pago`,
 					icon: 'success'
@@ -177,7 +187,7 @@ export default function ClientConfig() {
 				</div>
 				<div className="client-config-qr-container">
 					<a
-						href={`https://menu-host-front-dxa6.vercel.app/dashboard/qrgenerator?email=${userEmail}`}
+						href={`http://127.0.0.1:5173/dashboard/qrgenerator?email=${userEmail}`}
 					>
 						<button className="client-config-btn">Generar codigos Qr</button>
 					</a>
@@ -211,7 +221,7 @@ export default function ClientConfig() {
 									Actualizar plan
 								</button>
 							</div>
-							<div>
+							{/* <div>
 								<a
 									// eslint-disable-next-line react/no-unknown-property
 									mp-mode="dftl"
@@ -221,7 +231,7 @@ export default function ClientConfig() {
 								>
 									Continuar a pago
 								</a>
-							</div>
+							</div> */}
 
 							<script type="text/javascript">
 								{(function () {
@@ -266,10 +276,11 @@ export default function ClientConfig() {
 							<button
 								onClick={handleSubmitNewPlan}
 								className="subs-btn-newPlan"
+								href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848af994d0018b02039da906a5"
 							>
 								Actualizar plan
 							</button>
-							<a
+							{/* <a
 								// eslint-disable-next-line react/no-unknown-property
 								mp-mode="dftl"
 								href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380848af994d0018b02039da906a5"
@@ -277,7 +288,7 @@ export default function ClientConfig() {
 								className="subs-btn-newPlan"
 							>
 								Continuar a pago
-							</a>
+							</a> */}
 							<script type="text/javascript">
 								{(function () {
 									function $MPC_load() {

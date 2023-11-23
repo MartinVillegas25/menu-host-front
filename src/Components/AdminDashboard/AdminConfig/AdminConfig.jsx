@@ -24,6 +24,8 @@ export default function AdminConfig() {
 
 	const [planStandardInput, setPlanStandardInput] = useState('');
 	const [planPremiumInput, setPlanPremiumInput] = useState('');
+	// eslint-disable-next-line no-unused-vars
+	const [pageLoaded, setPageLoaded] = useState(false);
 
 	const handleChangeStandard = (e) => {
 		setPlanStandardInput(e.target.value);
@@ -115,6 +117,16 @@ export default function AdminConfig() {
 		dispatch(getPlans());
 		dispatch(getClientsToConfirm());
 		dispatch(getClientsToConfirmPlan());
+		// Marcar la página como cargada después de las operaciones asincrónicas
+		Promise.all([
+			dispatch(getAllClients()),
+			dispatch(validateAdmin()),
+			dispatch(getPlans()),
+			dispatch(getClientsToConfirm()),
+			dispatch(getClientsToConfirmPlan())
+		]).then(() => {
+			setPageLoaded(true);
+		});
 	}, []);
 
 	// Actualiza el valor de los input siempre que se modifiquen los planes
@@ -127,109 +139,113 @@ export default function AdminConfig() {
 
 	return (
 		<div>
-			{validation !== 'admin' ? (
-				<h1>Usted no tiene acceso </h1>
-			) : (
-				<main className="admin-config-container">
-					<div className="tablas">
-						<div className="primer-pago">
-							<h3>Usuarios a confirmar el pago</h3>
-							<table className="act-table">
-								<thead className="">
-									<tr>
-										<th>Mail</th>
-										<th>Activar</th>
-									</tr>
-								</thead>
-								<tbody className="act-table-body">
-									{clientsToConfirm?.map((c) => {
-										return (
-											<tr key={c.id}>
-												<td>{c.email}</td>
+			{pageLoaded === true ? (
+				validation !== 'admin' ? (
+					<h1>Usted no tiene acceso </h1>
+				) : (
+					<main className="admin-config-container">
+						<div className="tablas">
+							<div className="primer-pago">
+								<h3>Usuarios a confirmar el pago</h3>
+								<table className="act-table">
+									<thead className="">
+										<tr>
+											<th>Mail</th>
+											<th>Activar</th>
+										</tr>
+									</thead>
+									<tbody className="act-table-body">
+										{clientsToConfirm?.map((c) => {
+											return (
+												<tr key={c.id}>
+													<td>{c.email}</td>
 
-												{c.pagoConfirmado === 0 ? (
-													<td>
-														<button
-															value={c.email}
-															onClick={handleConfirmPayment}
-														>
-															Confirmar
-														</button>
-													</td>
-												) : (
-													<td>Confirmado</td>
-												)}
-											</tr>
-										);
-									})}
-								</tbody>
-							</table>
-						</div>
-						<div className="pago-plan">
-							<h3>Usuarios a confirmar el cambio de plan</h3>
-							<table className="act-table">
-								<thead className="">
-									<tr>
-										<th>Mail</th>
-										<th>Activar</th>
-									</tr>
-								</thead>
-								<tbody className="act-table-body">
-									{clientsToConfirmPlan?.map((c) => {
-										return (
-											<tr key={c.id}>
-												<td>{c.email}</td>
+													{c.pagoConfirmado === 0 ? (
+														<td>
+															<button
+																value={c.email}
+																onClick={handleConfirmPayment}
+															>
+																Confirmar
+															</button>
+														</td>
+													) : (
+														<td>Confirmado</td>
+													)}
+												</tr>
+											);
+										})}
+									</tbody>
+								</table>
+							</div>
+							<div className="pago-plan">
+								<h3>Usuarios a confirmar el cambio de plan</h3>
+								<table className="act-table">
+									<thead className="">
+										<tr>
+											<th>Mail</th>
+											<th>Activar</th>
+										</tr>
+									</thead>
+									<tbody className="act-table-body">
+										{clientsToConfirmPlan?.map((c) => {
+											return (
+												<tr key={c.id}>
+													<td>{c.email}</td>
 
-												{c.pagoCambioPlan === 0 ? (
-													<td>
-														<button
-															value={c.email}
-															onClick={handleConfirmPlanChange}
-														>
-															Confirmar
-														</button>
-													</td>
-												) : (
-													<td>Confirmado</td>
-												)}
-											</tr>
-										);
-									})}
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div></div>
-					<div className="admin-functions-panel">
-						<div className="admin-functions-panel-container">
-							<div className="admin-changedata">
-								<h3>Modificar precio de planes</h3>
-								<div>
-									<label>Estandar: </label>
-									<input
-										type="text"
-										value={planStandardInput}
-										onChange={handleChangeStandard}
-									/>
-								</div>
-								<div>
-									<label>Premium:</label>
-									<input
-										type="text"
-										value={planPremiumInput}
-										onChange={handleChangePremium}
-									/>
-								</div>
-								<button
-									onClick={handleSubmitPlan}
-									className="admin-config-submit-btn"
-								>
-									Modificar
-								</button>
+													{c.pagoCambioPlan === 0 ? (
+														<td>
+															<button
+																value={c.email}
+																onClick={handleConfirmPlanChange}
+															>
+																Confirmar
+															</button>
+														</td>
+													) : (
+														<td>Confirmado</td>
+													)}
+												</tr>
+											);
+										})}
+									</tbody>
+								</table>
 							</div>
 						</div>
-					</div>
-				</main>
+						<div></div>
+						<div className="admin-functions-panel">
+							<div className="admin-functions-panel-container">
+								<div className="admin-changedata">
+									<h3>Modificar precio de planes</h3>
+									<div>
+										<label>Estandar: </label>
+										<input
+											type="text"
+											value={planStandardInput}
+											onChange={handleChangeStandard}
+										/>
+									</div>
+									<div>
+										<label>Premium:</label>
+										<input
+											type="text"
+											value={planPremiumInput}
+											onChange={handleChangePremium}
+										/>
+									</div>
+									<button
+										onClick={handleSubmitPlan}
+										className="admin-config-submit-btn"
+									>
+										Modificar
+									</button>
+								</div>
+							</div>
+						</div>
+					</main>
+				)
+			) : (
+				<h1>Cargando...</h1>
 			)}
 		</div>
 	);

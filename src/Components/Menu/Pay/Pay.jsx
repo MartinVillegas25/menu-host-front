@@ -76,13 +76,10 @@ export default function Pay() {
 						</select>
 					</div>
 
-					{nombre === '' || payMethod === '' || payMethod === '-' ? (
-						<div>Ingrese su nombre y el metodo de pago</div>
-					) : (
-						<button className="payment-btn" onClick={handleSubmit}>
-							Pedir la cuenta
-						</button>
-					)}
+					<button className="payment-btn" onClick={handleSubmit}>
+						Pedir la cuenta
+					</button>
+
 					<a href="">Volver al menú</a>
 				</div>
 			)}

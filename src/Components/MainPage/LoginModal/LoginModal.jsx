@@ -6,10 +6,11 @@ import { useEffect, useState } from 'react';
 import { logUser, validateAdmin, validateUser } from '../../../redux/actions';
 import { Link } from 'react-router-dom';
 
-export default function LoginModal({ handleCloseLogin }) {
+export default function LoginModal({ handleCloseLogin, handleOpenSuscribe }) {
 	const dispatch = useDispatch();
 	const token = useSelector((state) => state.token);
 	const userType = useSelector((state) => state.userType);
+	console.log(userType);
 	const actualUser = useSelector((state) => state.actualUser);
 
 	const [input, setInput] = useState({
@@ -71,6 +72,10 @@ export default function LoginModal({ handleCloseLogin }) {
 			dispatch(handleCloseLogin());
 		}
 	};
+
+	const openSuscribe = () => {
+		dispatch(handleOpenSuscribe());
+	};
 	//Validaciones de tipo de usuario, para renderizado condicional de botones de acceso a los diferentes dashboard
 	useEffect(() => {
 		if (token) {
@@ -95,7 +100,13 @@ export default function LoginModal({ handleCloseLogin }) {
 						Si <span>Mesero</span>
 					</h3>
 					<h4>Bienvenido/a de vuelta</h4>
-
+					{userType === 'suspendido' ? (
+						<p> Usuario suspendido, contactese con el administrador</p>
+					) : userType === 'pago' ? (
+						<p>Error en el pago, contactese con el administrador</p>
+					) : (
+						<p></p>
+					)}
 					<p>Ingresá con tu email y contraseña</p>
 					{userType === 'pago' ? (
 						<p>
@@ -139,7 +150,7 @@ export default function LoginModal({ handleCloseLogin }) {
 							/>{' '}
 							<p>Recordarme</p>
 						</div>
-						
+						<a href="">Olvidaste la contraseña?</a>
 					</div>
 					{userType === 'local' ? (
 						<Link to={`/dashboard?email=${actualUser.email}`}>
@@ -157,7 +168,9 @@ export default function LoginModal({ handleCloseLogin }) {
 
 					<div className="login-to-register">
 						<p>No tienes una cuenta?</p>
-						<a href="">Registrate</a>
+						<button href="" onClick={openSuscribe}>
+							Registrate
+						</button>
 					</div>
 				</div>
 

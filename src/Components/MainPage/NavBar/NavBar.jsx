@@ -4,8 +4,8 @@ import './NavBar.css';
 import LoginModal from '../LoginModal/LoginModal';
 import SubsbribeModal from '../SubscibeModal/SubscribeModal.jsx';
 import { BsPersonCircle } from 'react-icons/bs';
-
-import logo2 from '../../../assets/logos/Logo2.png';
+import logo1 from '../../../assets/logos/logo1.png';
+import logo2 from '../../../assets/logos/logo2.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logOutUser } from '../../../redux/actions';
@@ -141,7 +141,10 @@ export default function NavBar() {
 				}
 			>
 				<div className="modal-container">
-					<LoginModal handleCloseLogin={handleCloseLogin} />
+					<LoginModal
+						handleCloseLogin={handleCloseLogin}
+						handleOpenSuscribe={handleOpenSubscribe}
+					/>
 				</div>
 			</article>
 			<article

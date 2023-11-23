@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import './LoginAdmin.css';
 import { useState } from 'react';
 import { createAdmin } from '../../../redux/actions';
+import swal from 'sweetalert';
 
 export default function LoginAdmin() {
 	const dispatch = useDispatch();
+	//Estado para verificar si el administrador tiene acceso
 	const newAdmin = useSelector((state) => state.newAdmin);
-	console.log(newAdmin.msg);
+
 	const [input, setInput] = useState({
 		name: '',
 		email: '',
@@ -28,9 +30,9 @@ export default function LoginAdmin() {
 	};
 
 	const handleSubmit = (e) => {
-		console.log(input);
 		e.preventDefault();
 		const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
 		if (input.name.trim() === '') {
 			alert('Por favor complete su nombre');
 			return;
@@ -47,7 +49,27 @@ export default function LoginAdmin() {
 			alert('Las contraseñas no coinciden');
 			return;
 		}
-		dispatch(createAdmin(input));
+
+		swal({
+			title: 'Crear admin',
+			text: '¿Está seguro de que desea crear este administrador?',
+			icon: 'warning',
+			buttons: ['No', 'Sí']
+		}).then((respuesta) => {
+			if (respuesta) {
+				dispatch(createAdmin(input));
+				swal({
+					text: 'Se ha creado un nuevo admin',
+					icon: 'success'
+				}).then(() => {
+					// Mover history.push('/') aquí para que se ejecute después de swal
+					window.location.assign('/');
+					console.log('push');
+				});
+			} else {
+				swal({ text: 'No se ha creado el admin', icon: 'info' });
+			}
+		});
 	};
 
 	return (

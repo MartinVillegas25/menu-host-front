@@ -8,10 +8,12 @@ import {
 } from '../../../redux/actions';
 import './Products.css';
 import queryString from 'query-string';
+import { BsCheckCircle } from 'react-icons/bs';
 
 export default function Products() {
 	const dispatch = useDispatch();
 	const [selectedCategory, setSelectedCategory] = useState(null);
+	const [showConfirmation, setShowConfirmation] = useState(false);
 
 	useEffect(() => {
 		const url = window.location.href;
@@ -34,8 +36,11 @@ export default function Products() {
 
 	const handleAddToMinicart = (e) => {
 		const producto = JSON.parse(e.target.value); // Convierte la cadena JSON en un objeto
-
 		dispatch(addToMinicart(producto));
+		setShowConfirmation(true);
+		setTimeout(() => {
+			setShowConfirmation(false);
+		}, 1000);
 	};
 
 	return (
@@ -61,6 +66,12 @@ export default function Products() {
 					</button>
 				))}
 			</div>
+			{showConfirmation && (
+				<div className="confirmation-symbol">
+					<BsCheckCircle />
+				</div>
+			)}
+
 			<div>
 				{products.map((categoria, index) => (
 					<div key={categoria.categoria + index}>

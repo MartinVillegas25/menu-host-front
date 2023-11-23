@@ -33,11 +33,37 @@ export default function ClientMenu() {
 	const handleChangeCategory = (e) => {
 		setNewCategory(e.target.value);
 	};
-	const handleCreateCateg = () => {
-		dispatch(createCategory({ nombre_categoria: newCategory }));
-		setNewCategory('');
-		setCategorySelected('');
-		window.location.reload(true);
+	// const handleCreateCateg = () => {
+	// 	dispatch(createCategory({ nombre_categoria: newCategory }));
+	// 	setNewCategory('');
+	// 	setCategorySelected('');
+	// 	window.location.reload(true);
+	// };
+
+	const handleCreateCateg = (e) => {
+		e.preventDefault();
+		swal({
+			title: 'Nueva categoria',
+			text: 'Desea crear esta categoria?',
+			icon: 'warning',
+			buttons: ['No', 'Si']
+		}).then((respuesta) => {
+			if (respuesta) {
+				dispatch(createCategory({ nombre_categoria: newCategory }));
+				setNewCategory('');
+				setCategorySelected('');
+
+				swal({
+					text: `Se ha creado la categoria`,
+					icon: 'success'
+				});
+				setTimeout(function () {
+					window.location.reload(true);
+				}, 2000);
+			} else {
+				swal({ text: 'No se ha creado la categoria', icon: 'info' });
+			}
+		});
 	};
 
 	const [categorySelected, setCategorySelected] = useState('');
@@ -78,6 +104,7 @@ export default function ClientMenu() {
 		);
 		setCategorySelected('');
 		setNewCategory('');
+
 		window.location.reload(true);
 	};
 
@@ -109,6 +136,17 @@ export default function ClientMenu() {
 
 	const handleCreateProdcut = (e) => {
 		e.preventDefault();
+		if (categorySelected === '') {
+			alert('Debe seleccionar una categoria');
+			return;
+		} else if (subCategorySelected === '') {
+			alert('Debe seleccionar una subcategoria');
+			return;
+		}
+		if (input.nombre === '') {
+			alert('Debe ingresar el nombre del producto');
+			return;
+		}
 		swal({
 			title: 'Nuevo producto',
 			text: 'Desea crear este producto?',
@@ -140,7 +178,7 @@ export default function ClientMenu() {
 		e.preventDefault();
 		swal({
 			title: 'Eliminar',
-			text: `Esta seguro que desea eliminar la categoria ${categorySelected} ?`,
+			text: `Esta seguro que desea eliminar la categoria ${categorySelected} ? Se eliminaran todos los productos y subcategorias asociados`,
 			icon: 'warning',
 			buttons: ['No', 'Si']
 		}).then((respuesta) => {
@@ -164,7 +202,7 @@ export default function ClientMenu() {
 		e.preventDefault();
 		swal({
 			title: 'Eliminar',
-			text: `Esta seguro que desea eliminar la subcategoria ${categorySelected} - ${subCategorySelected} ?`,
+			text: `Esta seguro que desea eliminar la subcategoria ${categorySelected} - ${subCategorySelected} ? Se eliminaran todos los productos asociados`,
 			icon: 'warning',
 			buttons: ['No', 'Si']
 		}).then((respuesta) => {
@@ -368,4 +406,3 @@ export default function ClientMenu() {
 		</main>
 	);
 }
-
