@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 import io from 'socket.io-client';
 import './Call.css';
 import { PiCallBellDuotone } from 'react-icons/pi';
-const socket = io("https://simesero.com");
+const socket = io();
 //const socket = io('https://menu-didactico.up.railway.app/');
 
 export default function Call() {
