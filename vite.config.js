@@ -7,7 +7,7 @@ export default defineConfig({
 	server: {
 		proxy: {
 			'/socket.io': {
-				target: 'ws://127.0.0.1:3002',
+				target: 'http://back-simesero-production.up.railway.app/',
 				changeOrigin: true,
 				ws: true
 			}
