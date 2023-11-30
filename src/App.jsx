@@ -1,51 +1,48 @@
-import './App.css';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import MainPage from './Components/MainPage';
-import AdminDashboardHome from './Components/AdminDashboard/AdminDashboardHome';
-import AdminDashboardClients from './Components/AdminDashboard/AdminDashboardClients';
-import AdminDashboardConfig from './Components/AdminDashboard/AdminDashboardConfig';
-import ClientDashboardHome from './Components/ClientDashboard/ClientDashboardHome';
-import ClientDashboardMenu from './Components/ClientDashboard/ClientDashboardMenu';
-import ClientDashboardConfig from './Components/ClientDashboard/ClientDashboardConfig';
-import Menu from './Components/Menu/Menu';
-import QrGenerator from './Components/ClientDashboard/ClientConfig/QrGenerator';
-import Gracias from './Components/MainPage/Gracias/Gracias';
-import LoginAdmin from './Components/MainPage/LoginAdmin/LoginAdmin';
-import AlertChart from './Components/Menu/AlertChart/AlertChart';
-import ClientChat from './Components/ClientDashboard/ClientChat/ClientChat';
+import './App.css';
+
+const MainPage = lazy(() => import('./Components/MainPage'));
+const AdminDashboardHome = lazy(() => import('./Components/AdminDashboard/AdminDashboardHome'));
+const AdminDashboardClients = lazy(() => import('./Components/AdminDashboard/AdminDashboardClients'));
+const AdminDashboardConfig = lazy(() => import('./Components/AdminDashboard/AdminDashboardConfig'));
+const ClientDashboardHome = lazy(() => import('./Components/ClientDashboard/ClientDashboardHome'));
+const ClientDashboardMenu = lazy(() => import('./Components/ClientDashboard/ClientDashboardMenu'));
+const ClientDashboardConfig = lazy(() => import('./Components/ClientDashboard/ClientDashboardConfig'));
+const Menu = lazy(() => import('./Components/Menu/Menu'));
+const QrGenerator = lazy(() => import('./Components/ClientDashboard/ClientConfig/QrGenerator'));
+const Gracias = lazy(() => import('./Components/MainPage/Gracias/Gracias'));
+const LoginAdmin = lazy(() => import('./Components/MainPage/LoginAdmin/LoginAdmin'));
+const AlertChart = lazy(() => import('./Components/Menu/AlertChart/AlertChart'));
+const ClientChat = lazy(() => import('./Components/ClientDashboard/ClientChat/ClientChat'));
+
 function App() {
-	return (
-		<BrowserRouter>
-			<div>
-				<Routes>
-					{/* Ruta de pagina principal  */}
-					<Route path="/" element={<MainPage />} />
-					<Route path="/home" element={<MainPage />} />
-					<Route path="/gracias" element={<Gracias />} />
-					<Route path="/admin-boss" element={<LoginAdmin />} />
-					{/* Rutas del panel de administrador */}
-					<Route path="/admin" element={<AdminDashboardHome />} />
-					<Route path="/admin/clientes" element={<AdminDashboardClients />} />
-					<Route
-						path="/admin/configuracion"
-						element={<AdminDashboardConfig />}
-					/>
-					{/* Rutas del panel de cada cliente */}
-					<Route path="/dashboard" element={<ClientDashboardHome />} />
-					<Route path="/dashboard/menu" element={<ClientDashboardMenu />} />
-					<Route
-						path="/dashboard/configuracion"
-						element={<ClientDashboardConfig />}
-					/>
-					<Route path="/dashboard/chat" element={<ClientChat />} />
-					<Route path="/dashboard/qrgenerator" element={<QrGenerator />} />
-					{/* Ruta del menu */}
-					<Route path="/menulocal" element={<Menu />} />
-					<Route path="/alert" element={<AlertChart />} />
-				</Routes>
-			</div>
-		</BrowserRouter>
-	);
+  return (
+    <BrowserRouter>
+      <div>
+        <Routes>
+          {/* Ruta de pagina principal */}
+          <Route path="/" element={<Suspense fallback={<div>Loading...</div>}> <MainPage /> </Suspense>} />
+          <Route path="/home" element={<Suspense fallback={<div>Loading...</div>}> <MainPage /> </Suspense>} />
+          <Route path="/gracias" element={<Suspense fallback={<div>Loading...</div>}> <Gracias /> </Suspense>} />
+          <Route path="/admin-boss" element={<Suspense fallback={<div>Loading...</div>}> <LoginAdmin /> </Suspense>} />
+          {/* Rutas del panel de administrador */}
+          <Route path="/admin" element={<Suspense fallback={<div>Loading...</div>}> <AdminDashboardHome /> </Suspense>} />
+          <Route path="/admin/clientes" element={<Suspense fallback={<div>Loading...</div>}> <AdminDashboardClients /> </Suspense>} />
+          <Route path="/admin/configuracion" element={<Suspense fallback={<div>Loading...</div>}> <AdminDashboardConfig /> </Suspense>} />
+          {/* Rutas del panel de cada cliente */}
+          <Route path="/dashboard" element={<Suspense fallback={<div>Loading...</div>}> <ClientDashboardHome /> </Suspense>} />
+          <Route path="/dashboard/menu" element={<Suspense fallback={<div>Loading...</div>}> <ClientDashboardMenu /> </Suspense>} />
+          <Route path="/dashboard/configuracion" element={<Suspense fallback={<div>Loading...</div>}> <ClientDashboardConfig /> </Suspense>} />
+          <Route path="/dashboard/chat" element={<Suspense fallback={<div>Loading...</div>}> <ClientChat /> </Suspense>} />
+          <Route path="/dashboard/qrgenerator" element={<Suspense fallback={<div>Loading...</div>}> <QrGenerator /> </Suspense>} />
+          {/* Ruta del menu */}
+          <Route path="/menulocal" element={<Suspense fallback={<div>Loading...</div>}> <Menu /> </Suspense>} />
+          <Route path="/alert" element={<Suspense fallback={<div>Loading...</div>}> <AlertChart /> </Suspense>} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;

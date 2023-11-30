@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from 'react'
 import './Testimonials.css';
-import img from '../../../assets/img8.jpg';
+import img from '../../../assets/img8.webp';
 
 export default function Testimonials() {
 	const testimonials = [

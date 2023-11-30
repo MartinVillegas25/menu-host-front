@@ -12,7 +12,18 @@ export default defineConfig({
 				ws: true
 			}
 		}
-	}
+	},
+	optimize: {
+		brotli: true,
+	},
+	build: {
+		minify: 'terser',
+		rollupOptions: {
+		plugins: [],
+		},
+		chunkSizeWarningLimit: 1000,
+	},
+
 });
 
 // target: 'https://menu-didactico.up.railway.app',

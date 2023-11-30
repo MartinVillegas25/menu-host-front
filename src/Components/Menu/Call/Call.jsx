@@ -3,7 +3,6 @@ import io from 'socket.io-client';
 import './Call.css';
 import { PiCallBellDuotone } from 'react-icons/pi';
 const socket = io();
-//const socket = io('https://menu-didactico.up.railway.app/');
 
 export default function Call() {
 	const location = useLocation();

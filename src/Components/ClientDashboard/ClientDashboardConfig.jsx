@@ -1,16 +1,19 @@
-import ClientConfig from './ClientConfig/ClientConfig.jsx';
+import React, { lazy, Suspense } from 'react';
 
-import ClientProfile from './ClientProfile/ClientProfile.jsx';
-import ClientSideMenu from './ClientSideMenu/ClientSideMenu.jsx';
+// Importaciones dinámicas
+const ClientProfile = lazy(() => import('./ClientProfile/ClientProfile.jsx'));
+const ClientSideMenu = lazy(() => import('./ClientSideMenu/ClientSideMenu.jsx'));
+const ClientConfig = lazy(() => import('./ClientConfig/ClientConfig.jsx'));
 
 export default function ClientDashboardConfig() {
-	return (
-		<div className="admin-dashboard">
-			
-			<ClientProfile />
-			<ClientSideMenu />
-			<ClientConfig />
-			{/* <FunctionPanel /> */}
-		</div>
-	);
+  return (
+    <div className="admin-dashboard">
+      <Suspense fallback={<div>Loading...</div>}>
+        <ClientProfile />
+        <ClientSideMenu />
+        <ClientConfig />
+        {/* <FunctionPanel /> */}
+      </Suspense>
+    </div>
+  );
 }

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import './LoginModal.css';
-import img from '../../../assets/CAMARERA.jpg';
+import img from '../../../assets/CAMARERA.webp';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { logUser, validateAdmin, validateUser } from '../../../redux/actions';

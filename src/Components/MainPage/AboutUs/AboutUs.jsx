@@ -1,6 +1,6 @@
-import img1 from '../../../assets/img4.jpeg';
-import img2 from '../../../assets/img5.jpeg';
-import img3 from '../../../assets/img6.jpeg';
+import img1 from '../../../assets/img4.webp';
+import img2 from '../../../assets/img5.webp';
+import img3 from '../../../assets/img6.webp';
 import './AboutUs.css';
 
 export default function AboutUs() {

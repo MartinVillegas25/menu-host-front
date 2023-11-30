@@ -1,7 +1,7 @@
 import './AppDetails.css';
-import mobile1 from '../../../assets/mobile1.png';
+import mobile1 from '../../../assets/mobile1.webp';
 import mobile2 from '../../../assets/mobile2.png';
-import mobile3 from '../../../assets/mobile4.png';
+import mobile3 from '../../../assets/mobile4.webp';
 
 export default function AppDetails() {
 	return (
